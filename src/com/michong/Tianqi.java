@@ -1,15 +1,39 @@
 package com.michong;
-
+/*
+ * 解析中国天气网的城市码
+ * 
+ * 
+ * */
 public class Tianqi {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String capter="北京:101010100朝阳:101010300顺义:101010400怀柔:101010500通州:101010600昌平:101010700延庆:101010800丰台:101010900石景山:101011000大兴:101011100房山:101011200密云:101011300门头沟:101011400平谷:101011500八达岭:101011600佛爷顶:101011700汤河口:101011800密云上甸子:101011900斋堂:101012000霞云岭:101012100北京城区:101012200";
-		
-		for(int n=0;n<capter.length()+11;n=n+12){
+		String capter="牡丹江:101050301佳木斯:101050401绥化:101050501黑河:101050601双鸭山:101051301";
+		System.out.println("总长度："+capter.length());
+		int[] num =new int[5];
+		char s=':';
+		int m=0;
+		for(int i=0;i<capter.length();i++){
+			if(capter.charAt(i)==s){
+				System.out.println(i+"\n");
+				num[m]=i;
+				m++;
+			}
 			
-		System.out.println(capter.substring(n,n+12)+"\n");
 		}
+		
+		System.out.println("共有："+m);
+		for(int c=0;c<m;c++){
+			System.out.println("第"+String.valueOf(c+1)+"个数组"+num[c]);
+		}
+		
+		int b=2;
+		for(int a=0;a<m-1;a++){
+			System.out.println("b为："+b);
+			b=num[a+1]-num[a]-10;
+			System.out.println(capter.substring(num[a]-b,num[a]+10)+"\n");
+		
+	}
 	}
 
 }
