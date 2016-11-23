@@ -1,15 +1,28 @@
 package com.michong;
 /*
- * ½âÎöÖĞ¹úÌìÆøÍøµÄ³ÇÊĞÂë
+ * è§£æä¸­å›½å¤©æ°”ç½‘çš„åŸå¸‚ç 
  * 
- * 
+ * ä½¿ç”¨ æ­£åˆ™çš„æ–¹æ³•è‡ªå®šä¹‰è§„åˆ™ï¼Œä½¿å¾—ä»£ç å¤§å¤§çš„ç®€æ´äº†
+ String capter="åŒ—äº¬:101010100æœé˜³:101010300é¡ºä¹‰:101010400æ€€æŸ”:101010500é€šå·:101010600æ˜Œå¹³:101010700å»¶åº†:101010800ä¸°å°:101010900çŸ³æ™¯å±±:101011000å¤§å…´:101011100æˆ¿å±±:101011200å¯†äº‘:101011300é—¨å¤´æ²Ÿ:101011400å¹³è°·:101011500å…«è¾¾å²­:101011600ä½›çˆ·é¡¶:101011700";
+        String regex = "\\W+\\:";
+        String regex2 = "\\w{9}";
+        String[] num = capter.split(regex);
+        String[] name = capter.split(regex2);
+        for (int i = 0; i <num.length-1;i++) {
+            System.out.print(name[i]);
+            System.out.print(num[i+1]);
+            System.out.println("");
+        }
+ 
+ 
+ 
  * */
 public class Tianqi {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String capter="±±¾©:101010100³¯Ñô:101010300Ë³Òå:101010400»³Èá:101010500Í¨Öİ:101010600²ıÆ½:101010700ÑÓÇì:101010800·áÌ¨:101010900Ê¯¾°É½:101011000´óĞË:101011100·¿É½:101011200ÃÜÔÆ:101011300ÃÅÍ·¹µ:101011400Æ½¹È:101011500°Ë´ïÁë:101011600·ğÒ¯¶¥:101011700";
-		System.out.println("×Ü³¤¶È£º"+capter.length());
+		String capter="åŒ—äº¬:101010100æœé˜³:101010300é¡ºä¹‰:101010400æ€€æŸ”:101010500é€šå·:101010600æ˜Œå¹³:101010700å»¶åº†:101010800ä¸°å°:101010900çŸ³æ™¯å±±:101011000å¤§å…´:101011100æˆ¿å±±:101011200å¯†äº‘:101011300é—¨å¤´æ²Ÿ:101011400å¹³è°·:101011500å…«è¾¾å²­:101011600ä½›çˆ·é¡¶:101011700";
+		System.out.println("æ€»é•¿åº¦ï¼š"+capter.length());
 		char s=':';
 		int d=0;
 		for(int i=0;i<capter.length();i++){
@@ -30,20 +43,20 @@ public class Tianqi {
 			
 		}
 		
-		System.out.println("¹²ÓĞ£º"+m);
+		System.out.println("å…±æœ‰ï¼š"+m);
 		for(int c=0;c<m;c++){
-			System.out.println("µÚ"+String.valueOf(c+1)+"¸öÊı×é"+num[c]);
+			System.out.println("ç¬¬"+String.valueOf(c+1)+"ä¸ªæ•°ç»„"+num[c]);
 		}
 		
 		int b=2;
 		for(int a=0;a<m-1;a++){
-			//System.out.println("bÎª£º"+b);
+			//System.out.println("bä¸ºï¼š"+b);
 			b=num[a+1]-num[a]-10;
-			//µÚÒ»¸ö³ÇÊĞ
+			//ç¬¬ä¸€ä¸ªåŸå¸‚
 			if(a==0){
 		     System.out.println(capter.substring(num[a]-b,num[a]+10)+"\n");
 			}
-			//Ê£ÏÂµÄ³ÇÊĞ
+			//å‰©ä¸‹çš„åŸå¸‚
 			System.out.println(capter.substring(num[a+1]-b,num[a+1]+10)+"\n");
 		
 	}
